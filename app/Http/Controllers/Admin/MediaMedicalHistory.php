@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Storage;
 use App\Contracts\Repositories\PatientRepository;
 use App\Eloquent\User;
 use Video;
+use App\Eloquent\MedicalHistory;
 class MediaMedicalHistory extends Controller
 {
     /**
@@ -40,8 +41,11 @@ class MediaMedicalHistory extends Controller
     {
         $video = new Video();
         $history = $video->saveHistory($request);
-        $video->saveMedia($history, $request);
-        return redirect()->route('patient.index')->with('message',"Thêm thành công");
+        if($video->saveMedia($history, $request)) {
+            return redirect()->route('patient.index')->with('message',"Thêm thành công");
+        }
+        $history->delete();
+        return redirect()->route('patient.index')->with('danger',"Video không hợp lệ");
     }
 
     /**
@@ -75,7 +79,19 @@ class MediaMedicalHistory extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
+        echo $id;
+        // $history = MedicalHistory::findorFail($id);
+        // $extension = Video::update($request->file('video'), $history->media->name);
+        // if($extension) {
+        //   $history->content = $request->content;
+        //   $history->save();
+        //   $history->media()->update([
+        //     'type' => $extension
+        //   ]);
+        //   return back()->with(['success' => 'Cập nhật thành công']);
+        // }
+        // return back()->withErrors('Video không hợp lệ.');
     }
 
     /**
@@ -86,6 +102,9 @@ class MediaMedicalHistory extends Controller
      */
     public function destroy($id)
     {
-        //
+        echo $id;
+        // $history = MedicalHistory::findorFail($id);
+        // if($history->delete())
+        // return back()->with(['success' => 'Cập nhật thành công']);
     }
 }

@@ -107,16 +107,16 @@ nav .user-setting .menu{
     display: block;
 }
 .sidebar-admin i {
-    margin-right: 10px; 
+    margin-right: 10px;
 }
 .sidebar-admin ul li {
     padding: 10px;
 }
 .sidebar-admin ul li:hover{
-    background: #2f3537 !important; 
+    background: #2f3537 !important;
 }
 .sidebar-admin ul li a:hover{
-    background: #2f3537 !important; 
+    background: #2f3537 !important;
 }
 .sidebar-admin .fa-angle-down {
     margin: 0px;
@@ -156,7 +156,7 @@ nav .user-setting .menu{
     max-height: 200px;
 }
 .content-admin .image-user {
-    border-right: 1px solid #cccccc; 
+    border-right: 1px solid #cccccc;
     padding-left: 30px;
     padding-top: 20px;
 }
@@ -167,4 +167,23 @@ nav .user-setting .menu{
 .detail-patient .panel {
     margin-top: 15px;
 }
+.detail-patient .panel video {
+    width:100%;
+    padding: 10px;
+    /*border: 2px solid #3498db;*/
+}
+.editing {
+  background-color: rgba(189, 195, 199,0.4);
+  /*background-color: rgba(44, 62, 80,0.5);*/
+}
 
+.editing button {
+  padding: 10px;
+  margin-bottom: 50px;
+  width: 100%;
+  font-size: 15px;
+  text-align: center;
+}
+#history {
+
+}

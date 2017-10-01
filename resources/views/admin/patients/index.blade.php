@@ -10,6 +10,11 @@
               <p>{{session('message')}}</p>
             </div>
           @endif
+          @if(session('danger'))
+            <div class="alert alert-danger">
+              <p>{{session('danger')}}</p>
+            </div>
+          @endif
         </div>
         <div class="panel-body">
             <div class="col-md-12 admin-actions">
@@ -70,17 +75,12 @@
                             <label>{{ trans('message.video') }}</label>
                             <div>
                                 <input id="file" type="file" name="video" class="form-control">
-                                {{-- @if ($errors->has('video')) --}}
-                                    {{-- <span class="help-block">
-                                         <strong>{{ $errors->first('video') }}</strong>
-                                    </span> --}}
-                                {{-- @endif --}}
                             </div>
                         </div>
                       {{-- content --}}
                         <div class="form-group">
                           <label for=""> {{__('message.content')}} </label>
-                          <textarea name="content" class="form-control" rows="5" type="text" required=""></textarea>
+                          <textarea name="content" class="form-control" rows="5" type="text" ></textarea>
                         </div>
                       {{-- date --}}
                         <div class="form-group">

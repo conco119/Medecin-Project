@@ -180,6 +180,7 @@ return [
         App\Providers\RepositoryServiceProvider::class,
         App\Providers\Video::class,
         App\Providers\ComposerServiceProvider::class,
+        Anchu\Ftp\FtpServiceProvider::class,
 
     ],
 
